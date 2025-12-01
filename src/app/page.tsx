@@ -1,5 +1,5 @@
 import { Header, Footer } from '@/components/layout';
-import { Hero, About, Services } from '@/components/sections';
+import { Hero, About, Services, WhyChooseUs, Industries } from '@/components/sections';
 
 export default function Home() {
   return (
@@ -16,13 +16,11 @@ export default function Home() {
         {/* Services Section */}
         <Services />
 
-        {/* Industries Section Placeholder */}
-        <section id="industries" className="min-h-screen flex items-center justify-center bg-gray-50">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl font-bold mb-4">Industries We Serve</h2>
-            <p className="text-lg text-gray-600">Industries section coming soon...</p>
-          </div>
-        </section>
+        {/* Why Choose Us Section */}
+        <WhyChooseUs />
+
+        {/* Industries Section */}
+        <Industries />
 
         {/* Contact Section Placeholder */}
         <section id="contact" className="min-h-screen flex items-center justify-center bg-white">
