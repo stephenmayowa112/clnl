@@ -39,16 +39,22 @@ export default function Navigation({ isScrolled }: NavigationProps) {
         <div className="shrink-0">
           <Link
             href="/"
-            className={`text-xl font-bold ${textColor} transition-colors`}
+            className="flex items-center transition-opacity hover:opacity-80"
             onClick={() => scrollToSection('hero')}
+            aria-label="CLNL Home"
           >
-            <span className="text-primary">CLNL</span>
+            <img 
+              src="/logo.svg" 
+              alt="CLNL - Complete Logistics Network Limited" 
+              className="h-10 w-auto"
+            />
           </Link>
         </div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex md:items-center md:space-x-8">
           <button
+            type="button"
             onClick={() => scrollToSection('hero')}
             className={`${textColor} ${hoverColor} transition-colors font-medium`}
           >
@@ -56,6 +62,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
           </button>
           
           <button
+            type="button"
             onClick={() => scrollToSection('about')}
             className={`${textColor} ${hoverColor} transition-colors font-medium`}
           >
@@ -65,9 +72,12 @@ export default function Navigation({ isScrolled }: NavigationProps) {
           {/* Services Dropdown */}
           <div className="relative group">
             <button
+              type="button"
               className={`${textColor} ${hoverColor} transition-colors font-medium flex items-center`}
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
+              aria-expanded={isServicesOpen ? 'true' : 'false'}
+              aria-haspopup="true"
             >
               Services
               <svg
@@ -75,6 +85,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -95,6 +106,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
                 {services.map((service) => (
                   <button
                     key={service.id}
+                    type="button"
                     onClick={() => scrollToSection('services')}
                     className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors"
                   >
@@ -106,6 +118,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
           </div>
 
           <button
+            type="button"
             onClick={() => scrollToSection('industries')}
             className={`${textColor} ${hoverColor} transition-colors font-medium`}
           >
@@ -113,6 +126,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
           </button>
 
           <button
+            type="button"
             onClick={() => scrollToSection('contact')}
             className={`${textColor} ${hoverColor} transition-colors font-medium`}
           >
@@ -121,6 +135,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
 
           {/* CTA Buttons */}
           <button
+            type="button"
             onClick={() => scrollToSection('quote')}
             className="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary transition-colors font-medium"
           >
@@ -128,6 +143,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
           </button>
 
           <button
+            type="button"
             onClick={() => scrollToSection('tracking')}
             className="bg-accent text-gray-900 px-4 py-2 rounded-md hover:bg-yellow-500 transition-colors font-medium"
           >
@@ -138,10 +154,11 @@ export default function Navigation({ isScrolled }: NavigationProps) {
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button
+            type="button"
             onClick={toggleMobileMenu}
             className={`${textColor} focus:outline-none focus:ring-2 focus:ring-primary rounded-md p-2 min-h-[44px] min-w-[44px] flex items-center justify-center`}
             aria-label="Toggle menu"
-            aria-expanded={isMobileMenuOpen}
+            aria-expanded={isMobileMenuOpen ? 'true' : 'false'}
           >
             {isMobileMenuOpen ? (
               <svg
@@ -181,6 +198,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
         <div className="md:hidden bg-white shadow-lg rounded-b-lg">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <button
+              type="button"
               onClick={() => scrollToSection('hero')}
               className="block w-full text-left px-3 py-2 text-gray-800 hover:bg-gray-100 hover:text-primary rounded-md transition-colors"
             >
@@ -188,6 +206,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
             </button>
 
             <button
+              type="button"
               onClick={() => scrollToSection('about')}
               className="block w-full text-left px-3 py-2 text-gray-800 hover:bg-gray-100 hover:text-primary rounded-md transition-colors"
             >
@@ -197,8 +216,11 @@ export default function Navigation({ isScrolled }: NavigationProps) {
             {/* Mobile Services Submenu */}
             <div>
               <button
+                type="button"
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
                 className="flex items-center justify-between w-full px-3 py-2 text-gray-800 hover:bg-gray-100 hover:text-primary rounded-md transition-colors"
+                aria-expanded={isServicesOpen ? 'true' : 'false'}
+                aria-haspopup="true"
               >
                 Services
                 <svg
@@ -208,6 +230,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -223,6 +246,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
                   {services.map((service) => (
                     <button
                       key={service.id}
+                      type="button"
                       onClick={() => scrollToSection('services')}
                       className="block w-full text-left px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-primary rounded-md transition-colors"
                     >
@@ -234,6 +258,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
             </div>
 
             <button
+              type="button"
               onClick={() => scrollToSection('industries')}
               className="block w-full text-left px-3 py-2 text-gray-800 hover:bg-gray-100 hover:text-primary rounded-md transition-colors"
             >
@@ -241,6 +266,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
             </button>
 
             <button
+              type="button"
               onClick={() => scrollToSection('contact')}
               className="block w-full text-left px-3 py-2 text-gray-800 hover:bg-gray-100 hover:text-primary rounded-md transition-colors"
             >
@@ -250,6 +276,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
             {/* Mobile CTA Buttons */}
             <div className="pt-4 space-y-2">
               <button
+                type="button"
                 onClick={() => scrollToSection('quote')}
                 className="block w-full bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary transition-colors font-medium text-center"
               >
@@ -257,6 +284,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
               </button>
 
               <button
+                type="button"
                 onClick={() => scrollToSection('tracking')}
                 className="block w-full bg-accent text-gray-900 px-4 py-2 rounded-md hover:bg-yellow-500 transition-colors font-medium text-center"
               >

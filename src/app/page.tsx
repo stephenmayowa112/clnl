@@ -1,12 +1,12 @@
 import { Header, Footer } from '@/components/layout';
-import { Hero, About, Services, WhyChooseUs, Industries } from '@/components/sections';
+import { Hero, About, Services, WhyChooseUs, Industries, Contact } from '@/components/sections';
 
 export default function Home() {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Header />
       
-      <main className="overflow-x-hidden">
+      <main id="main-content" className="overflow-x-hidden">
         {/* Hero Section */}
         <Hero />
 
@@ -22,13 +22,8 @@ export default function Home() {
         {/* Industries Section */}
         <Industries />
 
-        {/* Contact Section Placeholder */}
-        <section id="contact" className="min-h-screen flex items-center justify-center bg-white">
-          <div className="container mx-auto px-4 sm:px-6 text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Contact Us</h2>
-            <p className="text-base sm:text-lg text-gray-600">Contact section coming soon...</p>
-          </div>
-        </section>
+        {/* Contact Section */}
+        <Contact />
 
         {/* Quote Section Placeholder */}
         <section id="quote" className="py-16 sm:py-20 bg-primary text-white">
