@@ -46,8 +46,8 @@ export const WhyChooseUs: React.FC = () => {
   };
 
   return (
-    <section id="why-choose-us" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="why-choose-us" className="py-16 sm:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -55,18 +55,18 @@ export const WhyChooseUs: React.FC = () => {
           variants={containerVariants}
         >
           {/* Section Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <motion.div variants={itemVariants} className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
               Why Choose CLNL
             </h2>
-            <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
-            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            <div className="w-20 sm:w-24 h-1 bg-primary mx-auto mb-6 sm:mb-8"></div>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed px-2">
               Discover what sets us apart as your trusted logistics partner
             </p>
           </motion.div>
 
           {/* Differentiators Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
             {differentiators.map((differentiator) => {
               const IconComponent = iconMap[differentiator.icon];
 
@@ -74,24 +74,24 @@ export const WhyChooseUs: React.FC = () => {
                 <motion.div
                   key={differentiator.id}
                   variants={itemVariants}
-                  className="bg-gray-50 rounded-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+                  className="bg-gray-50 rounded-lg p-6 sm:p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100"
                 >
                   {/* Icon */}
-                  <div className="flex justify-center mb-6">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                  <div className="flex justify-center mb-4 sm:mb-6">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center">
                       {IconComponent && (
-                        <IconComponent className="text-3xl text-primary" />
+                        <IconComponent className="text-2xl sm:text-3xl text-primary" />
                       )}
                     </div>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 text-center">
                     {differentiator.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-700 text-center leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-700 text-center leading-relaxed">
                     {differentiator.description}
                   </p>
                 </motion.div>

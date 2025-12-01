@@ -119,7 +119,7 @@ export const Modal: React.FC<ModalProps> = ({
 
   const modalContent = (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/50 backdrop-blur-sm animate-fadeIn"
       onClick={handleOverlayClick}
       role="dialog"
       aria-modal="true"
@@ -129,15 +129,15 @@ export const Modal: React.FC<ModalProps> = ({
         ref={modalRef}
         className={`
           relative w-full ${sizeClasses[size]} bg-white rounded-lg shadow-2xl
-          animate-slideUp max-h-[90vh] overflow-hidden flex flex-col
+          animate-slideUp max-h-[95vh] sm:max-h-[90vh] overflow-hidden flex flex-col
         `}
         tabIndex={-1}
       >
         {/* Header */}
         {(title || showCloseButton) && (
-          <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+          <div className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-200">
             {title && (
-              <h2 id="modal-title" className="text-2xl font-bold text-gray-900">
+              <h2 id="modal-title" className="text-lg sm:text-2xl font-bold text-gray-900">
                 {title}
               </h2>
             )}
@@ -145,7 +145,7 @@ export const Modal: React.FC<ModalProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="ml-auto text-gray-400 hover:text-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-1"
+                className="ml-auto text-gray-400 hover:text-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
                 aria-label="Close modal"
               >
                 <svg
@@ -165,7 +165,7 @@ export const Modal: React.FC<ModalProps> = ({
         )}
 
         {/* Content */}
-        <div className="px-6 py-6 overflow-y-auto flex-1">
+        <div className="px-4 sm:px-6 py-4 sm:py-6 overflow-y-auto flex-1">
           {children}
         </div>
       </div>

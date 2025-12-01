@@ -44,20 +44,20 @@ export const Services: React.FC<ServicesProps> = ({ onRequestQuote }) => {
   };
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section id="services" className="py-16 sm:py-20 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-3 sm:mb-4">
             Our Services
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-2">
             Comprehensive logistics solutions tailored to your business needs
           </p>
         </motion.div>
@@ -68,7 +68,7 @@ export const Services: React.FC<ServicesProps> = ({ onRequestQuote }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12"
         >
           {services.map((service) => {
             const IconComponent = iconMap[service.icon];
@@ -79,8 +79,9 @@ export const Services: React.FC<ServicesProps> = ({ onRequestQuote }) => {
                 key={service.id}
                 onClick={() => setActiveService(service.id)}
                 className={`
-                  flex items-center gap-2 px-6 py-3 rounded-lg font-semibold
+                  flex items-center gap-2 px-4 sm:px-6 py-3 rounded-lg font-semibold
                   transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary
+                  min-h-[44px] text-sm sm:text-base
                   ${
                     isActive
                       ? 'bg-primary text-white shadow-lg scale-105'
@@ -88,9 +89,9 @@ export const Services: React.FC<ServicesProps> = ({ onRequestQuote }) => {
                   }
                 `}
               >
-                {IconComponent && <IconComponent className="text-xl" />}
+                {IconComponent && <IconComponent className="text-lg sm:text-xl" />}
                 <span className="hidden sm:inline">{service.name}</span>
-                <span className="sm:hidden">{service.name.split(' ')[0]}</span>
+                <span className="sm:hidden text-xs">{service.name.split(' ')[0]}</span>
               </button>
             );
           })}
@@ -126,21 +127,21 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
   const IconComponent = iconMap[service.icon];
 
   return (
-    <div className="grid md:grid-cols-2 gap-8 p-8 md:p-12">
+    <div className="grid md:grid-cols-2 gap-6 sm:gap-8 p-6 sm:p-8 md:p-12">
       {/* Left Column: Icon and Description */}
       <div className="flex flex-col">
-        <div className="flex items-center gap-4 mb-6">
+        <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
           {IconComponent && (
-            <div className="flex items-center justify-center w-16 h-16 bg-primary/10 rounded-xl">
-              <IconComponent className="text-4xl text-primary" />
+            <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-xl shrink-0">
+              <IconComponent className="text-3xl sm:text-4xl text-primary" />
             </div>
           )}
-          <h3 className="text-2xl md:text-3xl font-bold text-secondary">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-secondary">
             {service.name}
           </h3>
         </div>
 
-        <p className="text-gray-700 text-lg leading-relaxed mb-6">
+        <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-4 sm:mb-6">
           {service.description}
         </p>
 
@@ -155,23 +156,23 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
       </div>
 
       {/* Right Column: Offerings and Products */}
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         {/* Offerings */}
         <div>
-          <h4 className="text-xl font-semibold text-secondary mb-4">
+          <h4 className="text-lg sm:text-xl font-semibold text-secondary mb-3 sm:mb-4">
             What We Offer
           </h4>
           <ul className="space-y-2">
             {service.offerings.map((offering, index) => (
               <li
                 key={index}
-                className="flex items-start gap-3 text-gray-700"
+                className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-gray-700"
               >
                 <motion.span
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="text-primary mt-1 shrink-0"
+                  className="text-primary mt-0.5 sm:mt-1 shrink-0"
                 >
                   ✓
                 </motion.span>
@@ -190,7 +191,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
         {/* Products (if available) */}
         {service.products && service.products.length > 0 && (
           <div>
-            <h4 className="text-xl font-semibold text-secondary mb-4">
+            <h4 className="text-lg sm:text-xl font-semibold text-secondary mb-3 sm:mb-4">
               Products We Handle
             </h4>
             <div className="flex flex-wrap gap-2">
@@ -200,7 +201,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="px-4 py-2 bg-accent/20 text-secondary rounded-full text-sm font-medium"
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 bg-accent/20 text-secondary rounded-full text-xs sm:text-sm font-medium"
                 >
                   {product}
                 </motion.span>

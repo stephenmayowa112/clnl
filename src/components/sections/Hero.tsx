@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { FaChevronDown } from 'react-icons/fa';
 import { Button } from '@/components/ui';
 import { companyInfo } from '@/lib/constants';
+import { DynamicQuoteRequestModal, DynamicTrackingModal } from '@/components/modals';
 
 export interface HeroProps {
   onRequestQuote?: () => void;
@@ -13,6 +14,8 @@ export interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) => {
   const [scrollY, setScrollY] = useState(0);
+  const [showQuoteModal, setShowQuoteModal] = useState(false);
+  const [showTrackingModal, setShowTrackingModal] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,11 +32,8 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
     if (onRequestQuote) {
       onRequestQuote();
     } else {
-      // Default behavior: scroll to quote section
-      const quoteSection = document.getElementById('quote');
-      if (quoteSection) {
-        quoteSection.scrollIntoView({ behavior: 'smooth' });
-      }
+      // Open modal with lazy-loaded component
+      setShowQuoteModal(true);
     }
   };
 
@@ -41,11 +41,8 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
     if (onTrackShipment) {
       onTrackShipment();
     } else {
-      // Default behavior: scroll to tracking section
-      const trackingSection = document.getElementById('tracking');
-      if (trackingSection) {
-        trackingSection.scrollIntoView({ behavior: 'smooth' });
-      }
+      // Open modal with lazy-loaded component
+      setShowTrackingModal(true);
     }
   };
 
@@ -77,7 +74,7 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-16 sm:py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -89,7 +86,7 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight px-2"
           >
             {companyInfo.name}
           </motion.h1>
@@ -99,7 +96,7 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl lg:text-3xl mb-8 font-light text-white/95"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 sm:mb-8 font-light text-white/95 px-2"
           >
             {companyInfo.tagline}
           </motion.p>
@@ -109,7 +106,7 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-base md:text-lg lg:text-xl mb-12 max-w-3xl mx-auto text-white/90 leading-relaxed"
+            className="text-base md:text-lg lg:text-xl mb-8 sm:mb-12 max-w-3xl mx-auto text-white/90 leading-relaxed px-2"
           >
             {companyInfo.description}
           </motion.p>
@@ -119,13 +116,13 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center px-2"
           >
             <Button
               variant="outline"
               size="lg"
               onClick={handleRequestQuote}
-              className="w-full sm:w-auto min-w-[200px]"
+              className="w-full sm:w-auto sm:min-w-[200px]"
             >
               Request a Quote
             </Button>
@@ -133,7 +130,7 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
               variant="outline"
               size="lg"
               onClick={handleTrackShipment}
-              className="w-full sm:w-auto min-w-[200px]"
+              className="w-full sm:w-auto sm:min-w-[200px]"
             >
               Track Your Shipment
             </Button>
@@ -146,11 +143,11 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-10"
       >
         <motion.button
           onClick={handleScrollDown}
-          className="flex flex-col items-center text-white/80 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full p-2"
+          className="flex flex-col items-center text-white/80 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full p-2 min-h-[44px] min-w-[44px]"
           animate={{
             y: [0, 10, 0],
           }}
@@ -161,10 +158,25 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
           }}
           aria-label="Scroll down"
         >
-          <span className="text-sm mb-2 hidden sm:block">Scroll Down</span>
-          <FaChevronDown className="text-2xl" />
+          <span className="text-xs sm:text-sm mb-1 sm:mb-2 hidden sm:block">Scroll Down</span>
+          <FaChevronDown className="text-xl sm:text-2xl" />
         </motion.button>
       </motion.div>
+
+      {/* Dynamically loaded modals - only loaded when opened */}
+      {showQuoteModal && (
+        <DynamicQuoteRequestModal
+          isOpen={showQuoteModal}
+          onClose={() => setShowQuoteModal(false)}
+        />
+      )}
+
+      {showTrackingModal && (
+        <DynamicTrackingModal
+          isOpen={showTrackingModal}
+          onClose={() => setShowTrackingModal(false)}
+        />
+      )}
     </section>
   );
 };

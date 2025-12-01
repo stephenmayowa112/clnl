@@ -271,14 +271,14 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
   return (
     <div className="w-full">
       {/* Progress Indicator */}
-      <div className="mb-8">
+      <div className="mb-6 sm:mb-8">
         <div className="flex items-center justify-between mb-2">
           {STEPS.map((step, index) => (
             <React.Fragment key={step.id}>
               <div className="flex flex-col items-center flex-1">
                 <div
                   className={`
-                    w-10 h-10 rounded-full flex items-center justify-center font-semibold
+                    w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-semibold text-sm sm:text-base
                     ${
                       currentStep > step.id
                         ? 'bg-green-500 text-white'
@@ -290,15 +290,15 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
                 >
                   {currentStep > step.id ? '✓' : step.id}
                 </div>
-                <div className="mt-2 text-center">
-                  <p className="text-xs font-medium text-gray-900">{step.title}</p>
-                  <p className="text-xs text-gray-500 hidden sm:block">{step.description}</p>
+                <div className="mt-1 sm:mt-2 text-center">
+                  <p className="text-[10px] sm:text-xs font-medium text-gray-900 leading-tight">{step.title}</p>
+                  <p className="text-[10px] sm:text-xs text-gray-500 hidden md:block">{step.description}</p>
                 </div>
               </div>
               {index < STEPS.length - 1 && (
                 <div
                   className={`
-                    flex-1 h-1 mx-2 mt-[-2rem]
+                    flex-1 h-0.5 sm:h-1 mx-1 sm:mx-2 mt-[-1.5rem] sm:mt-[-2rem]
                     ${currentStep > step.id ? 'bg-green-500' : 'bg-gray-200'}
                   `}
                 />
@@ -313,7 +313,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
         {renderStepContent()}
 
         {/* Navigation Buttons */}
-        <div className="flex gap-4 mt-6">
+        <div className="flex gap-3 sm:gap-4 mt-4 sm:mt-6">
           {currentStep > 1 && (
             <Button
               type="button"
@@ -321,7 +321,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
               size="lg"
               onClick={handlePrevious}
               disabled={isSubmitting}
-              className="flex-1"
+              className="flex-1 text-sm sm:text-base"
             >
               Previous
             </Button>
@@ -333,7 +333,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
               variant="primary"
               size="lg"
               onClick={handleNext}
-              className="flex-1"
+              className="flex-1 text-sm sm:text-base"
             >
               Next
             </Button>
@@ -343,7 +343,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
               variant="primary"
               size="lg"
               disabled={isSubmitting}
-              className="flex-1"
+              className="flex-1 text-sm sm:text-base"
             >
               {isSubmitting ? 'Submitting...' : 'Submit Request'}
             </Button>

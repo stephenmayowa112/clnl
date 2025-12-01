@@ -139,8 +139,9 @@ export default function Navigation({ isScrolled }: NavigationProps) {
         <div className="md:hidden">
           <button
             onClick={toggleMobileMenu}
-            className={`${textColor} focus:outline-none`}
+            className={`${textColor} focus:outline-none focus:ring-2 focus:ring-primary rounded-md p-2 min-h-[44px] min-w-[44px] flex items-center justify-center`}
             aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? (
               <svg

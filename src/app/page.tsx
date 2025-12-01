@@ -3,10 +3,10 @@ import { Hero, About, Services, WhyChooseUs, Industries } from '@/components/sec
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Header />
       
-      <main>
+      <main className="overflow-x-hidden">
         {/* Hero Section */}
         <Hero />
 
@@ -24,25 +24,25 @@ export default function Home() {
 
         {/* Contact Section Placeholder */}
         <section id="contact" className="min-h-screen flex items-center justify-center bg-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl font-bold mb-4">Contact Us</h2>
-            <p className="text-lg text-gray-600">Contact section coming soon...</p>
+          <div className="container mx-auto px-4 sm:px-6 text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Contact Us</h2>
+            <p className="text-base sm:text-lg text-gray-600">Contact section coming soon...</p>
           </div>
         </section>
 
         {/* Quote Section Placeholder */}
-        <section id="quote" className="py-20 bg-primary text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4">Request a Quote</h2>
-            <p className="text-lg">Quote form coming soon...</p>
+        <section id="quote" className="py-16 sm:py-20 bg-primary text-white">
+          <div className="container mx-auto px-4 sm:px-6 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Request a Quote</h2>
+            <p className="text-base sm:text-lg">Quote form coming soon...</p>
           </div>
         </section>
 
         {/* Tracking Section Placeholder */}
-        <section id="tracking" className="py-20 bg-accent">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">Track Your Shipment</h2>
-            <p className="text-lg text-gray-800">Tracking form coming soon...</p>
+        <section id="tracking" className="py-16 sm:py-20 bg-accent">
+          <div className="container mx-auto px-4 sm:px-6 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900">Track Your Shipment</h2>
+            <p className="text-base sm:text-lg text-gray-800">Tracking form coming soon...</p>
           </div>
         </section>
       </main>
