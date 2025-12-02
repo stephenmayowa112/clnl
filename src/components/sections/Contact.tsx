@@ -126,18 +126,20 @@ export const Contact: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Map Placeholder Column */}
+            {/* Google Maps Column */}
             <motion.div variants={itemVariants}>
-              <div className="bg-gray-100 rounded-lg h-full min-h-[400px] flex items-center justify-center p-8">
-                <div className="text-center">
-                  <FaMapMarkerAlt className="text-6xl text-gray-400 mx-auto mb-4" />
-                  <p className="text-gray-600 text-lg">
-                    Map Integration Placeholder
-                  </p>
-                  <p className="text-gray-500 text-sm mt-2">
-                    Google Maps or other map service can be integrated here
-                  </p>
-                </div>
+              <div className="rounded-lg overflow-hidden shadow-lg h-full min-h-[400px]">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.6485847891!2d3.3589!3d6.5744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzQnMjcuOCJOIDPCsDIxJzMyLjAiRQ!5e0!3m2!1sen!2sng!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, minHeight: '400px' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="CLNL Office Location - Oregun, Ikeja, Lagos"
+                  aria-label="Map showing CLNL office location at No. 156, Kudirat Abiola Way, Oregun Ikeja, Lagos"
+                ></iframe>
               </div>
             </motion.div>
           </div>
