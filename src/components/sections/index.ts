@@ -5,3 +5,4 @@ export { WhyChooseUs } from './WhyChooseUs';
 export { Industries } from './Industries';
 export { Contact } from './Contact';
 export { ProductGallery } from './ProductGallery';
+export { Quote } from './Quote';

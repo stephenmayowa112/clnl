@@ -1,5 +1,5 @@
 import { Header, Footer } from '@/components/layout';
-import { Hero, About, Services, WhyChooseUs, Industries, Contact, ProductGallery } from '@/components/sections';
+import { Hero, About, Services, WhyChooseUs, Industries, Contact, ProductGallery, Quote } from '@/components/sections';
 
 export default function Home() {
   return (
@@ -28,13 +28,8 @@ export default function Home() {
         {/* Contact Section */}
         <Contact />
 
-        {/* Quote Section Placeholder */}
-        <section id="quote" className="py-16 sm:py-20 bg-primary text-white">
-          <div className="container mx-auto px-4 sm:px-6 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4">Request a Quote</h2>
-            <p className="text-base sm:text-lg">Quote form coming soon...</p>
-          </div>
-        </section>
+        {/* Quote Section */}
+        <Quote />
 
         {/* Tracking Section Placeholder */}
         <section id="tracking" className="py-16 sm:py-20 bg-accent">
