@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaChevronDown } from 'react-icons/fa';
+import Image from 'next/image';
 import { Button } from '@/components/ui';
 import { companyInfo } from '@/lib/constants';
 import { DynamicQuoteRequestModal, DynamicTrackingModal } from '@/components/modals';
@@ -12,10 +13,16 @@ export interface HeroProps {
   onTrackShipment?: () => void;
 }
 
+const backgroundImages = [
+  '/images/bgImage1.jpg',
+  '/images/bgImage2.jpg',
+];
+
 export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) => {
   const [scrollY, setScrollY] = useState(0);
   const [showQuoteModal, setShowQuoteModal] = useState(false);
   const [showTrackingModal, setShowTrackingModal] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +31,15 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Rotate background images every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const parallaxOffset = scrollY * 0.5;
@@ -58,19 +74,29 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background with parallax effect */}
-      <div
-        className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary/90"
-        style={{
-          transform: `translateY(${parallaxOffset}px)`,
-        }}
-      >
-        {/* Overlay pattern for visual interest */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }} />
-        </div>
+      {/* Background images with parallax effect */}
+      <div className="absolute inset-0">
+        {backgroundImages.map((image, index) => (
+          <div
+            key={image}
+            className="absolute inset-0 transition-opacity duration-1000"
+            style={{
+              opacity: currentImageIndex === index ? 1 : 0,
+              transform: `translateY(${parallaxOffset}px)`,
+            }}
+          >
+            <Image
+              src={image}
+              alt="CLNL Logistics Background"
+              fill
+              priority={index === 0}
+              quality={90}
+              className="object-cover"
+            />
+          </div>
+        ))}
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-secondary/70 to-primary/80" />
       </div>
 
       {/* Content */}

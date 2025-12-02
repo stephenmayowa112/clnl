@@ -44,9 +44,9 @@ export default function Navigation({ isScrolled }: NavigationProps) {
             aria-label="CLNL Home"
           >
             <img 
-              src="/logo.svg" 
+              src="/images/logo.png" 
               alt="CLNL - Complete Logistics Network Limited" 
-              className="h-10 w-auto"
+              className="h-12 w-auto"
             />
           </Link>
         </div>

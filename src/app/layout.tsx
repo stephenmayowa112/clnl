@@ -37,6 +37,11 @@ export const metadata: Metadata = {
   creator: companyInfo.name,
   publisher: companyInfo.name,
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://clnl.com.ng'),
+  icons: {
+    icon: '/images/favicon.png',
+    shortcut: '/images/favicon.png',
+    apple: '/images/logo.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_NG',
@@ -46,7 +51,7 @@ export const metadata: Metadata = {
     description: companyInfo.description,
     images: [
       {
-        url: '/logo.png',
+        url: '/images/logo.png',
         width: 1200,
         height: 630,
         alt: `${companyInfo.name} Logo`,
@@ -57,7 +62,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${companyInfo.name} | Logistics, Freight & Customs Clearing Nigeria`,
     description: companyInfo.description,
-    images: ['/logo.png'],
+    images: ['/images/logo.png'],
   },
   robots: {
     index: true,

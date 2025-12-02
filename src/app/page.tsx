@@ -1,5 +1,5 @@
 import { Header, Footer } from '@/components/layout';
-import { Hero, About, Services, WhyChooseUs, Industries, Contact } from '@/components/sections';
+import { Hero, About, Services, WhyChooseUs, Industries, Contact, ProductGallery } from '@/components/sections';
 
 export default function Home() {
   return (
@@ -21,6 +21,9 @@ export default function Home() {
 
         {/* Industries Section */}
         <Industries />
+
+        {/* Product Gallery Section */}
+        <ProductGallery />
 
         {/* Contact Section */}
         <Contact />

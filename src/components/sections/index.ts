@@ -4,3 +4,4 @@ export { Services } from './Services';
 export { WhyChooseUs } from './WhyChooseUs';
 export { Industries } from './Industries';
 export { Contact } from './Contact';
+export { ProductGallery } from './ProductGallery';
