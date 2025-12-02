@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { companyInfo, services } from '@/lib/constants';
+import Image from 'next/image';
+import { services } from '@/lib/constants';
 
 interface NavigationProps {
   isScrolled: boolean;
@@ -36,18 +37,22 @@ export default function Navigation({ isScrolled }: NavigationProps) {
     <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between h-20">
         {/* Logo */}
-        <div className="shrink-0">
+        <div className="shrink-0 flex items-center">
           <Link
             href="/"
             className="flex items-center transition-opacity hover:opacity-80"
             onClick={() => scrollToSection('hero')}
             aria-label="CLNL Home"
           >
-            <img 
-              src="/images/logo.png" 
-              alt="CLNL - Complete Logistics Network Limited" 
-              className="h-8 w-auto"
-            />
+            <div className="relative h-10 w-32">
+              <Image 
+                src="/images/logo.png" 
+                alt="CLNL - Complete Logistics Network Limited" 
+                fill
+                className="object-contain object-left"
+                priority
+              />
+            </div>
           </Link>
         </div>
 
