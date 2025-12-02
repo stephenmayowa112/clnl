@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaBullseye, FaEye, FaStar } from 'react-icons/fa';
+import Image from 'next/image';
 import { companyInfo } from '@/lib/constants';
 
 export const About: React.FC = () => {
@@ -53,62 +53,80 @@ export const About: React.FC = () => {
             {/* Mission Card */}
             <motion.div
               variants={itemVariants}
-              className="bg-white rounded-lg shadow-lg p-6 sm:p-8 hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="flex justify-center mb-4 sm:mb-6">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                  <FaBullseye className="text-2xl sm:text-3xl text-primary" />
-                </div>
+              <div className="relative h-48 w-full">
+                <Image
+                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
+                  alt="Our Mission"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 text-center">
-                Our Mission
-              </h3>
-              <p className="text-sm sm:text-base text-gray-700 text-center leading-relaxed">
-                {companyInfo.mission}
-              </p>
+              <div className="p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 text-center">
+                  Our Mission
+                </h3>
+                <p className="text-sm sm:text-base text-gray-700 text-center leading-relaxed">
+                  {companyInfo.mission}
+                </p>
+              </div>
             </motion.div>
 
             {/* Vision Card */}
             <motion.div
               variants={itemVariants}
-              className="bg-white rounded-lg shadow-lg p-6 sm:p-8 hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="flex justify-center mb-4 sm:mb-6">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-secondary/10 rounded-full flex items-center justify-center">
-                  <FaEye className="text-2xl sm:text-3xl text-secondary" />
-                </div>
+              <div className="relative h-48 w-full">
+                <Image
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+                  alt="Our Vision"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 text-center">
-                Our Vision
-              </h3>
-              <p className="text-sm sm:text-base text-gray-700 text-center leading-relaxed">
-                {companyInfo.vision}
-              </p>
+              <div className="p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 text-center">
+                  Our Vision
+                </h3>
+                <p className="text-sm sm:text-base text-gray-700 text-center leading-relaxed">
+                  {companyInfo.vision}
+                </p>
+              </div>
             </motion.div>
 
             {/* Values Card */}
             <motion.div
               variants={itemVariants}
-              className="bg-white rounded-lg shadow-lg p-6 sm:p-8 hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="flex justify-center mb-4 sm:mb-6">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-accent/10 rounded-full flex items-center justify-center">
-                  <FaStar className="text-2xl sm:text-3xl text-accent" />
-                </div>
+              <div className="relative h-48 w-full">
+                <Image
+                  src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80"
+                  alt="Our Values"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 text-center">
-                Our Values
-              </h3>
-              <ul className="space-y-2">
-                {companyInfo.values.map((value, index) => (
-                  <li
-                    key={index}
-                    className="text-sm sm:text-base text-gray-700 text-center font-medium"
-                  >
-                    {value}
-                  </li>
-                ))}
-              </ul>
+              <div className="p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 text-center">
+                  Our Values
+                </h3>
+                <ul className="space-y-2">
+                  {companyInfo.values.map((value, index) => (
+                    <li
+                      key={index}
+                      className="text-sm sm:text-base text-gray-700 text-center font-medium"
+                    >
+                      {value}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
           </div>
         </motion.div>
