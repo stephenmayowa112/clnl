@@ -19,9 +19,10 @@ export const companyInfo: CompanyInfo = {
     'Excellence',
   ],
   contact: {
-    address: 'Lagos, Nigeria',
-    phone: ['+234 XXX XXX XXXX'],
-    email: ['info@clnl.com.ng', 'support@clnl.com.ng'],
+    address: 'No. 156, Kudirat Abiola Way / No. 2 Adewunmi Estate, Oregun Ikeja, Lagos, Nigeria',
+    phone: ['+234-8164096255', '+234-8033054354'],
+    email: ['info@completelogisticsnetwork.com', 'ezeudenze@yahoo.com', 'dnng2006@gmail.com'],
+    website: 'www.completelogisticsnetwork.com',
   },
 };
 
