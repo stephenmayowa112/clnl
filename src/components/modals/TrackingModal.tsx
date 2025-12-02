@@ -43,7 +43,7 @@ export const TrackingModal: React.FC<TrackingModalProps> = ({
         <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
           <h4 className="font-semibold text-blue-900 mb-2">Need Help?</h4>
           <p className="text-sm text-blue-800">
-            If you're having trouble tracking your shipment or need additional assistance, 
+            If you&apos;re having trouble tracking your shipment or need additional assistance, 
             please contact our customer support team.
           </p>
           <div className="mt-2 text-sm text-blue-900">

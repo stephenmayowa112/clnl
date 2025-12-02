@@ -251,7 +251,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
 
             {submitStatus === 'success' && (
               <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800" role="alert">
-                Thank you for your quote request! We'll review your information and get back to you within 24 hours.
+                Thank you for your quote request! We&apos;ll review your information and get back to you within 24 hours.
               </div>
             )}
 

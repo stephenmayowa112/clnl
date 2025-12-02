@@ -67,7 +67,7 @@ export const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
             Quote Request Submitted!
           </h3>
           <p className="text-gray-600">
-            Thank you for your interest. We'll review your request and get back to you within 24 hours.
+            Thank you for your interest. We&apos;ll review your request and get back to you within 24 hours.
           </p>
         </div>
       ) : (

@@ -64,7 +64,7 @@ export const TrackingForm: React.FC<TrackingFormProps> = ({
       </Button>
 
       <p className="text-sm text-gray-600 text-center">
-        Can't find your tracking number? <a href="#contact" className="text-primary hover:underline">Contact us</a>
+        Can&apos;t find your tracking number? <a href="#contact" className="text-primary hover:underline">Contact us</a>
       </p>
     </form>
   );

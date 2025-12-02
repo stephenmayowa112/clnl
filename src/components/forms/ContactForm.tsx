@@ -109,7 +109,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 
       {submitStatus === 'success' && (
         <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800" role="alert">
-          Thank you for contacting us! We'll get back to you shortly.
+          Thank you for contacting us! We&apos;ll get back to you shortly.
         </div>
       )}
 
