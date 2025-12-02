@@ -46,7 +46,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
             <img 
               src="/images/logo.png" 
               alt="CLNL - Complete Logistics Network Limited" 
-              className="h-12 w-auto"
+              className="h-8 w-auto"
             />
           </Link>
         </div>
