@@ -7,10 +7,10 @@ import type { CompanyInfo, ServiceDetail, Industry, Differentiator } from '@/typ
 
 export const companyInfo: CompanyInfo = {
   name: 'Complete Logistics Network Limited',
-  tagline: 'Your Trusted Partner for Agro Exports, Freight Management, Customs Clearing, Logistics & Facilities Management',
-  description: 'Complete Logistics Network Limited (CLNL) is a leading multi-service logistics provider in Nigeria, offering comprehensive solutions across agro exports, freight management, customs clearing, logistics & warehousing, and facilities management. With our experienced team and technology-driven approach, we deliver end-to-end logistics excellence.',
-  mission: 'To provide seamless, reliable, and innovative logistics solutions that empower businesses to thrive in local and global markets.',
-  vision: 'To be the most trusted and efficient logistics partner in Africa, setting industry standards for service excellence and customer satisfaction.',
+  tagline: 'Your Trusted Trading/Logistics Partner for Agro Exports, Freight Management, and Customs Clearing',
+  description: 'Complete Logistics Network Limited (CLNL) is a leading agro export trading company in Nigeria, specializing in connecting Nigerian agricultural products to global markets. We offer comprehensive trading and logistics solutions including agro exports, freight management, customs clearing, and warehousing. With our experienced team and technology-driven approach, we deliver end-to-end excellence in agricultural trade.',
+  mission: 'To provide seamless, reliable, and innovative trading and logistics solutions that empower agro businesses to thrive in local and global markets.',
+  vision: 'To be a leading Trading/Logistics partner in Africa, setting industry standards for service excellence and customer satisfaction.',
   values: [
     'Integrity',
     'Efficiency',
@@ -21,7 +21,7 @@ export const companyInfo: CompanyInfo = {
   contact: {
     address: 'No. 156, Kudirat Abiola Way / No. 2 Adewunmi Estate, Oregun Ikeja, Lagos, Nigeria',
     phone: ['+234-8164096255', '+234-8033054354'],
-    email: ['info@completelogisticsnetwork.com', 'ezeudenze@yahoo.com', 'dnng2006@gmail.com'],
+    email: ['info@completelogisticsnetwork.com', 'ezeudenze@yahoo.com', 'clnng2006@gmail.com'],
     website: 'www.completelogisticsnetwork.com',
   },
 };
@@ -180,18 +180,6 @@ export const industries: Industry[] = [
     description: 'Comprehensive customs and freight services for international traders',
   },
   {
-    id: 'construction',
-    name: 'Construction',
-    icon: 'FaHardHat',
-    description: 'Heavy equipment logistics and facilities management for construction projects',
-  },
-  {
-    id: 'oil-gas',
-    name: 'Oil & Gas',
-    icon: 'FaOilCan',
-    description: 'Specialized logistics and facilities management for energy sector operations',
-  },
-  {
     id: 'retail',
     name: 'Retail',
     icon: 'FaStore',
@@ -207,7 +195,7 @@ export const industries: Industry[] = [
     id: 'sme-corporate',
     name: 'SMEs & Large Corporations',
     icon: 'FaBuilding',
-    description: 'Scalable logistics solutions for businesses of all sizes',
+    description: 'Scalable trading and logistics solutions for businesses of all sizes',
   },
 ];
 

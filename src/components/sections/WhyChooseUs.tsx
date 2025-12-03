@@ -61,7 +61,7 @@ export const WhyChooseUs: React.FC = () => {
             </h2>
             <div className="w-20 sm:w-24 h-1 bg-primary mx-auto mb-6 sm:mb-8"></div>
             <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed px-2">
-              Discover what sets us apart as your trusted logistics partner
+              Discover what sets us apart as your trusted Trading/Logistics Partner
             </p>
           </motion.div>
 

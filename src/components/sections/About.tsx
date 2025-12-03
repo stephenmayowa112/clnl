@@ -57,8 +57,8 @@ export const About: React.FC = () => {
             >
               <div className="relative h-48 w-full">
                 <Image
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
-                  alt="Our Mission"
+                  src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80"
+                  alt="Our Mission - Agricultural Trading"
                   fill
                   className="object-cover"
                 />
@@ -81,8 +81,8 @@ export const About: React.FC = () => {
             >
               <div className="relative h-48 w-full">
                 <Image
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
-                  alt="Our Vision"
+                  src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80"
+                  alt="Our Vision - Global Trade"
                   fill
                   className="object-cover"
                 />
@@ -105,8 +105,8 @@ export const About: React.FC = () => {
             >
               <div className="relative h-48 w-full">
                 <Image
-                  src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80"
-                  alt="Our Values"
+                  src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80"
+                  alt="Our Values - Excellence"
                   fill
                   className="object-cover"
                 />
