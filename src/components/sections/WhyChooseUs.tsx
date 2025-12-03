@@ -59,10 +59,7 @@ export const WhyChooseUs: React.FC = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
               Why Choose CLNL
             </h2>
-            <div className="w-20 sm:w-24 h-1 bg-primary mx-auto mb-6 sm:mb-8"></div>
-            <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed px-2">
-              Discover what sets us apart as your trusted Trading/Logistics Partner
-            </p>
+            <div className="w-20 sm:w-24 h-1 bg-primary mx-auto"></div>
           </motion.div>
 
           {/* Differentiators Grid */}
