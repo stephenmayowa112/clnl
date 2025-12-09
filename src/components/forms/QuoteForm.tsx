@@ -162,7 +162,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({
             <Input
               label="Phone Number"
               type="tel"
-              placeholder="+234 XXX XXX XXXX"
+              placeholder="+234-8164096255"
               error={errors.phone?.message}
               required
               {...register('phone')}
