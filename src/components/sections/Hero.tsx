@@ -96,7 +96,7 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
           </div>
         ))}
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-secondary/70 to-primary/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/50 via-secondary/40 to-primary/50" />
       </div>
 
       {/* Content */}
