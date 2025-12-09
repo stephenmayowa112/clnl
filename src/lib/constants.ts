@@ -21,7 +21,7 @@ export const companyInfo: CompanyInfo = {
   contact: {
     address: 'No. 156, Kudirat Abiola Way / No. 2 Adewunmi Estate, Oregun Ikeja, Lagos, Nigeria',
     phone: ['+234-8164096255', '+234-8033054354'],
-    email: ['info@completelogisticsnetwork.com', 'ezeudenze@yahoo.com', 'clnng2006@gmail.com'],
+    email: ['info@completelogisticsnetwork.com', 'clnng2006@gmail.com', 'ezeudenze@yahoo.com'],
     website: 'www.completelogisticsnetwork.com',
   },
 };
