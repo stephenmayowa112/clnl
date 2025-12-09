@@ -122,26 +122,16 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 sm:mb-8 font-light text-white/95 px-2"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8 sm:mb-12 font-light text-white/95 px-2"
           >
             {companyInfo.tagline}
-          </motion.p>
-
-          {/* Description */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-base md:text-lg lg:text-xl mb-8 sm:mb-12 max-w-3xl mx-auto text-white/90 leading-relaxed px-2"
-          >
-            {companyInfo.description}
           </motion.p>
 
           {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center px-2"
           >
             <Button
