@@ -60,8 +60,7 @@ export const About: React.FC = () => {
                   src="/images/mission.png"
                   alt="Our Mission"
                   fill
-                  quality={100}
-                  priority
+                  quality={75}
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -86,8 +85,7 @@ export const About: React.FC = () => {
                   src="/images/vision.png"
                   alt="Our Vision"
                   fill
-                  quality={100}
-                  priority
+                  quality={75}
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -112,8 +110,7 @@ export const About: React.FC = () => {
                   src="/images/values.png"
                   alt="Our Values"
                   fill
-                  quality={100}
-                  priority
+                  quality={75}
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>

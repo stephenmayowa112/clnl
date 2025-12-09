@@ -90,7 +90,7 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
               alt="CLNL Logistics Background"
               fill
               priority={index === 0}
-              quality={90}
+              quality={75}
               className="object-cover"
             />
           </div>
