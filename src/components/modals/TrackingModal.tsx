@@ -47,8 +47,8 @@ export const TrackingModal: React.FC<TrackingModalProps> = ({
             please contact our customer support team.
           </p>
           <div className="mt-2 text-sm text-blue-900">
-            <p>📞 Phone: +234 XXX XXX XXXX</p>
-            <p>📧 Email: support@clnl.com.ng</p>
+            <p>📞 Phone: +234-8164096255</p>
+            <p>📧 Email: info@completelogisticsnetwork.com</p>
           </div>
         </div>
       </div>
