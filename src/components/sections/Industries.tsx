@@ -30,6 +30,23 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export const Industries: React.FC = () => {
+  const [showAll, setShowAll] = React.useState(false);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Show 3 industries on mobile initially, all on desktop
+  const displayedIndustries = isMobile && !showAll ? industries.slice(0, 3) : industries;
+  const hasMore = isMobile && industries.length > 3;
+
   return (
     <section id="industries" className="py-16 sm:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6">
@@ -50,11 +67,45 @@ export const Industries: React.FC = () => {
         </motion.div>
 
         {/* Industries Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
-          {industries.map((industry, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {displayedIndustries.map((industry, index) => (
             <IndustryCard key={industry.id} industry={industry} index={index} />
           ))}
         </div>
+
+        {/* See More Button - Mobile Only */}
+        {hasMore && !showAll && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="flex justify-center mt-6"
+          >
+            <button
+              onClick={() => setShowAll(true)}
+              className="px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-secondary transition-colors duration-300 shadow-md hover:shadow-lg"
+            >
+              See More Industries
+            </button>
+          </motion.div>
+        )}
+
+        {/* See Less Button - Mobile Only */}
+        {hasMore && showAll && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="flex justify-center mt-6"
+          >
+            <button
+              onClick={() => setShowAll(false)}
+              className="px-6 py-3 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-300 transition-colors duration-300 shadow-md hover:shadow-lg"
+            >
+              See Less
+            </button>
+          </motion.div>
+        )}
       </div>
     </section>
   );
