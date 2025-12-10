@@ -50,7 +50,7 @@ export const Industries: React.FC = () => {
         </motion.div>
 
         {/* Industries Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {industries.map((industry, index) => (
             <IndustryCard key={industry.id} industry={industry} index={index} />
           ))}
@@ -94,7 +94,7 @@ const IndustryCard: React.FC<IndustryCardProps> = ({ industry, index }) => {
       </p>
 
       {/* Hover Effect Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
     </motion.div>
   );
 };

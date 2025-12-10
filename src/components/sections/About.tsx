@@ -63,7 +63,7 @@ export const About: React.FC = () => {
                   quality={75}
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent"></div>
               </div>
               <div className="p-6 sm:p-8">
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 text-center">
@@ -88,7 +88,7 @@ export const About: React.FC = () => {
                   quality={75}
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent"></div>
               </div>
               <div className="p-6 sm:p-8">
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 text-center">
@@ -113,7 +113,7 @@ export const About: React.FC = () => {
                   quality={75}
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent"></div>
               </div>
               <div className="p-6 sm:p-8">
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 text-center">
