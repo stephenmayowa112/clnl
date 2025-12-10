@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -13,13 +13,24 @@ const agroProducts = [
   { id: 6, name: 'Palm Oil', image: '/images/product6.jpg' },
   { id: 7, name: 'Shea Butter', image: '/images/product7.jpg' },
   { id: 8, name: 'Dried Chili Peppers', image: '/images/product8.jpg' },
-  { id: 9, name: 'Soybeans', image: '/images/product9.jpg' },
-  { id: 10, name: 'Groundnuts', image: '/images/product10.jpg' },
-  { id: 11, name: 'Turmeric', image: '/images/product11.jpg' },
-  { id: 12, name: 'Moringa', image: '/images/product12.jpg' },
 ];
 
 export const ProductGallery: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Show 6 products on mobile, 8 on desktop
+  const displayedProducts = isMobile ? agroProducts.slice(0, 6) : agroProducts;
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -66,7 +77,7 @@ export const ProductGallery: React.FC = () => {
             variants={containerVariants}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
           >
-            {agroProducts.map((product) => (
+            {displayedProducts.map((product) => (
               <motion.div
                 key={product.id}
                 variants={itemVariants}
