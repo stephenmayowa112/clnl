@@ -53,7 +53,7 @@ export const About: React.FC = () => {
             {/* Mission Card */}
             <motion.div
               variants={itemVariants}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 card-hover img-zoom"
             >
               <div className="relative h-48 w-full">
                 <Image
@@ -78,7 +78,7 @@ export const About: React.FC = () => {
             {/* Vision Card */}
             <motion.div
               variants={itemVariants}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 card-hover img-zoom"
             >
               <div className="relative h-48 w-full">
                 <Image
@@ -103,7 +103,7 @@ export const About: React.FC = () => {
             {/* Values Card */}
             <motion.div
               variants={itemVariants}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 card-hover img-zoom"
             >
               <div className="relative h-48 w-full">
                 <Image

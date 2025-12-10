@@ -70,7 +70,7 @@ export const ProductGallery: React.FC = () => {
               <motion.div
                 key={product.id}
                 variants={itemVariants}
-                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300"
+                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 card-hover"
               >
                 <div className="relative h-64 w-full">
                   <Image

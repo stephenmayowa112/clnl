@@ -112,7 +112,7 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight px-2"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight px-2 text-shadow"
           >
             {companyInfo.name}
           </motion.h1>
@@ -122,7 +122,7 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8 sm:mb-12 font-light text-white/95 px-2"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8 sm:mb-12 font-light text-white/95 px-2 text-shadow"
           >
             {companyInfo.tagline}
           </motion.p>
@@ -138,7 +138,7 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
               variant="outline"
               size="lg"
               onClick={handleRequestQuote}
-              className="w-full sm:w-auto sm:min-w-[200px]"
+              className="w-full sm:w-auto sm:min-w-[200px] btn-glow"
             >
               Request a Quote
             </Button>
@@ -146,7 +146,7 @@ export const Hero: React.FC<HeroProps> = ({ onRequestQuote, onTrackShipment }) =
               variant="outline"
               size="lg"
               onClick={handleTrackShipment}
-              className="w-full sm:w-auto sm:min-w-[200px]"
+              className="w-full sm:w-auto sm:min-w-[200px] btn-glow"
             >
               Track Your Shipment
             </Button>

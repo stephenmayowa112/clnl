@@ -71,11 +71,11 @@ export const WhyChooseUs: React.FC = () => {
                 <motion.div
                   key={differentiator.id}
                   variants={itemVariants}
-                  className="bg-gray-50 rounded-lg p-6 sm:p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+                  className="bg-gray-50 rounded-lg p-6 sm:p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 card-hover shine-effect"
                 >
                   {/* Icon */}
                   <div className="flex justify-center mb-4 sm:mb-6">
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center icon-pulse">
                       {IconComponent && (
                         <IconComponent className="text-2xl sm:text-3xl text-primary" />
                       )}
