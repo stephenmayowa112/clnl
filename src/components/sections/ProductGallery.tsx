@@ -13,6 +13,7 @@ const agroProducts = [
   { id: 6, name: 'Palm Oil', image: '/images/product6.jpg' },
   { id: 7, name: 'Shea Butter', image: '/images/product7.jpg' },
   { id: 8, name: 'Dried Chili Peppers', image: '/images/product8.jpg' },
+  { id: 9, name: 'Groundnuts', image: '/images/product9.jpg' },
 ];
 
 export const ProductGallery: React.FC = () => {
@@ -28,8 +29,8 @@ export const ProductGallery: React.FC = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Show 6 products on mobile, 8 on desktop
-  const displayedProducts = isMobile ? agroProducts.slice(0, 6) : agroProducts;
+  // Show 6 products on mobile (2x3 grid), 8 on desktop
+  const displayedProducts = isMobile ? agroProducts.slice(0, 6) : agroProducts.slice(0, 8);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -68,14 +69,14 @@ export const ProductGallery: React.FC = () => {
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
             <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Showcasing premium Nigerian agricultural products we've successfully exported to global markets through our comprehensive logistics services.
+              Showcasing premium Nigerian agricultural products we&apos;ve successfully exported to global markets through our comprehensive logistics services.
             </p>
           </motion.div>
 
           {/* Product Grid */}
           <motion.div
             variants={containerVariants}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6"
           >
             {displayedProducts.map((product) => (
               <motion.div
@@ -83,7 +84,7 @@ export const ProductGallery: React.FC = () => {
                 variants={itemVariants}
                 className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 card-hover"
               >
-                <div className="relative h-64 w-full">
+                <div className="relative h-40 sm:h-64 w-full">
                   <Image
                     src={product.image}
                     alt={product.name}
