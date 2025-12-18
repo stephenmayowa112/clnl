@@ -58,7 +58,7 @@ export const About: React.FC = () => {
   };
 
   return (
-    <section id="about" className="py-16 sm:py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
+    <section id="about" className="py-16 sm:py-20 bg-linear-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Top-right blob */}
@@ -68,10 +68,7 @@ export const About: React.FC = () => {
         {/* Center floating accent */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl" />
         {/* Dot pattern */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: 'radial-gradient(circle, #0066CC 1px, transparent 1px)',
-          backgroundSize: '35px 35px',
-        }} />
+        <div className="absolute inset-0 opacity-[0.02] dot-pattern" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -89,7 +86,7 @@ export const About: React.FC = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               About Us
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary via-accent to-secondary mx-auto mb-6 sm:mb-8 rounded-full"></div>
+            <div className="w-24 h-1 bg-linear-to-r from-primary via-accent to-secondary mx-auto mb-6 sm:mb-8 rounded-full"></div>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-2">
               {companyInfo.description}
             </p>
@@ -97,7 +94,7 @@ export const About: React.FC = () => {
 
           {/* Mission, Vision, Values Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
-            {cardData.map((card, index) => (
+            {cardData.map((card) => (
               <motion.div
                 key={card.title}
                 variants={itemVariants}
@@ -113,12 +110,12 @@ export const About: React.FC = () => {
                     quality={75}
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent"></div>
                   
                   {/* Floating Icon */}
                   <motion.div
                     whileHover={{ rotate: [0, -10, 10, 0] }}
-                    className={`absolute bottom-4 right-4 w-12 h-12 bg-gradient-to-br ${card.gradient} rounded-xl flex items-center justify-center shadow-lg ${card.shadowColor}`}
+                    className={`absolute bottom-4 right-4 w-12 h-12 bg-linear-to-br ${card.gradient} rounded-xl flex items-center justify-center shadow-lg ${card.shadowColor}`}
                   >
                     <card.icon className="text-xl text-white" />
                   </motion.div>
@@ -133,16 +130,13 @@ export const About: React.FC = () => {
                   {card.isValues ? (
                     <ul className="space-y-2">
                       {(card.content as string[]).map((value, idx) => (
-                        <motion.li
+                        <li
                           key={idx}
-                          initial={{ opacity: 0, x: -10 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ delay: idx * 0.1 }}
                           className="text-sm sm:text-base text-gray-600 text-center font-medium flex items-center justify-center gap-2"
                         >
-                          <span className={`w-2 h-2 rounded-full bg-gradient-to-r ${card.gradient}`}></span>
+                          <span className={`w-2 h-2 rounded-full bg-linear-to-r ${card.gradient}`}></span>
                           {value}
-                        </motion.li>
+                        </li>
                       ))}
                     </ul>
                   ) : (
@@ -153,7 +147,7 @@ export const About: React.FC = () => {
                 </div>
 
                 {/* Bottom accent line */}
-                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${card.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
+                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r ${card.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
               </motion.div>
             ))}
           </div>
