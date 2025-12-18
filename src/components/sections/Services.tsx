@@ -38,6 +38,21 @@ export interface ServicesProps {
 export const Services: React.FC<ServicesProps> = ({ onRequestQuote }) => {
   const [activeService, setActiveService] = useState<string>(services[0].id);
 
+  // Listen for service selection from navigation
+  React.useEffect(() => {
+    const handleServiceSelect = (event: CustomEvent<string>) => {
+      const serviceId = event.detail;
+      if (services.find(s => s.id === serviceId)) {
+        setActiveService(serviceId);
+      }
+    };
+
+    window.addEventListener('selectService', handleServiceSelect as EventListener);
+    return () => {
+      window.removeEventListener('selectService', handleServiceSelect as EventListener);
+    };
+  }, []);
+
   const activeServiceData = services.find((s) => s.id === activeService) || services[0];
 
   const handleRequestQuote = (serviceId: string) => {

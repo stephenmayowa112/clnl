@@ -7,13 +7,13 @@ import { FaLeaf } from 'react-icons/fa';
 
 const agroProducts = [
   { id: 1, name: 'Cocoa Beans', image: '/images/product1.jpg' },
-  { id: 2, name: 'Sesame Seeds', image: '/images/product2.jpg' },
-  { id: 3, name: 'Cashew Nuts', image: '/images/product3.jpg' },
-  { id: 4, name: 'Ginger', image: '/images/product4.jpg' },
-  { id: 5, name: 'Hibiscus Flowers', image: '/images/product5.jpg' },
-  { id: 6, name: 'Palm Oil', image: '/images/product6.jpg' },
-  { id: 7, name: 'Shea Butter', image: '/images/product7.jpg' },
-  { id: 8, name: 'Dried Chili Peppers', image: '/images/product8.jpg' },
+  { id: 2, name: 'Ginger', image: '/images/product2.jpg' },
+  { id: 3, name: 'Hibiscus Flowers', image: '/images/product3.jpg' },
+  { id: 4, name: 'Sesame Seeds', image: '/images/product4.jpg' },
+  { id: 5, name: 'Cashew Nuts', image: '/images/product5.jpg' },
+  { id: 6, name: 'Shea Butte', image: '/images/product6.jpg' },
+  { id: 7, name: 'Melon', image: '/images/product7.jpg' },
+  { id: 8, name: 'Dried Melon', image: '/images/product8.jpg' },
   { id: 9, name: 'Groundnuts', image: '/images/product9.jpg' },
 ];
 

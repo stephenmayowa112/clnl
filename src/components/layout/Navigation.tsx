@@ -30,6 +30,13 @@ export default function Navigation({ isScrolled }: NavigationProps) {
     }
   };
 
+  const scrollToService = (serviceId: string) => {
+    // Dispatch custom event to select the service
+    window.dispatchEvent(new CustomEvent('selectService', { detail: serviceId }));
+    // Scroll to services section
+    scrollToSection('services');
+  };
+
   const textColor = isScrolled ? 'text-gray-800' : 'text-white';
   const hoverColor = isScrolled ? 'hover:text-primary' : 'hover:text-accent';
 
@@ -112,7 +119,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
                   <button
                     key={service.id}
                     type="button"
-                    onClick={() => scrollToSection('services')}
+                    onClick={() => scrollToService(service.id)}
                     className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors"
                   >
                     {service.name}
@@ -252,7 +259,7 @@ export default function Navigation({ isScrolled }: NavigationProps) {
                     <button
                       key={service.id}
                       type="button"
-                      onClick={() => scrollToSection('services')}
+                      onClick={() => scrollToService(service.id)}
                       className="block w-full text-left px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-primary rounded-md transition-colors"
                     >
                       {service.name}
